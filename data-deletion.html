@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FireWatch — Data Deletion & Privacy Policy</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #1a1a1a;
+      background: #f9f9f9;
+    }
+    .header {
+      background: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 48px 24px 36px;
+    }
+    .header h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .header p { font-size: 1.1rem; color: #aaa; margin-bottom: 6px; }
+    .header .date { font-size: 0.85rem; color: #777; }
+    .container {
+      max-width: 760px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      padding: 48px 56px;
+    }
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-top: 40px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #f0f0f0;
+    }
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #333;
+      margin-top: 28px;
+      margin-bottom: 8px;
+    }
+    p { margin-bottom: 14px; color: #333; }
+    ul { margin: 10px 0 16px 24px; }
+    ul li { margin-bottom: 8px; color: #333; }
+    hr { border: none; border-top: 1px solid #eee; margin: 36px 0; }
+    a { color: #1a73e8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .info-box {
+      background: #f5f5f5;
+      border-left: 4px solid #1a1a1a;
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 16px 0;
+    }
+    .info-box p { margin: 0; font-style: italic; }
+    .warning-box {
+      background: #fff3f3;
+      border: 2px solid #C0392B;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 16px 0;
+    }
+    .warning-box p { margin: 0; color: #7B1A1A; font-weight: 500; }
+    .steps-box {
+      background: #f0f7ff;
+      border: 1px solid #c8dff5;
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin: 16px 0;
+    }
+    .steps-box p { margin: 0 0 8px; font-weight: 600; color: #1a4a7a; }
+    .steps-box ul { margin: 8px 0 0 20px; }
+    .steps-box ul li { color: #1a4a7a; margin-bottom: 6px; }
+    .contact-block {
+      background: #f5f5f5;
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-top: 16px;
+    }
+    .contact-block p { margin: 0; }
+    .footer {
+      text-align: center;
+      padding: 32px 24px;
+      color: #999;
+      font-size: 0.85rem;
+    }
+    .platform-note {
+      background: #f9f9f9;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 16px 0;
+    }
+    .platform-note p { margin: 0 0 6px; font-weight: 600; }
+    .platform-note ul { margin: 6px 0 0 20px; }
+    .platform-note ul li { margin-bottom: 4px; font-size: 14px; }
+    @media (max-width: 600px) {
+      .container { padding: 28px 20px; margin: 16px; border-radius: 8px; }
+      .header h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+ 
+<div class="header">
+  <h1>FireWatch</h1>
+  <p>Data Deletion &amp; Privacy Policy</p>
+  <p class="date">Effective Date: April 29, 2026</p>
+</div>
+ 
+<div class="container">
+ 
+  <h2>1. Overview</h2>
+  <p>FireWatch is committed to giving you full control over your personal data. This document explains exactly what data we collect, where it is stored, and how you can request its deletion at any time.</p>
+  <p>This policy applies to all users of FireWatch regardless of location, and is designed to comply with the Apple App Store guidelines, Google Play Store guidelines, PIPEDA (Canada), CCPA (California), and GDPR principles.</p>
+ 
+  <hr />
+ 
+  <h2>2. What Data We Collect and Where It Is Stored</h2>
+  <p>FireWatch stores your data in two places:</p>
+ 
+  <h3>2.1 On Your Device (Local Storage)</h3>
+  <p>The following data is stored locally on your device:</p>
+  <ul>
+    <li>Your health data synced from Apple Health or Google Health Connect (heart rate, HRV, sleep, workouts, steps)</li>
+    <li>Your readiness and recovery scores</li>
+    <li>Your shift schedule and call log history</li>
+    <li>App preferences and settings</li>
+    <li>Cached profile information</li>
+  </ul>
+  <p>This data remains on your device and is not automatically uploaded to our servers. It is removed when you delete the app or clear app data from your device settings.</p>
+ 
+  <h3>2.2 On Our Servers (Supabase Cloud Database)</h3>
+  <p>The following data is stored in our secure cloud database:</p>
+  <ul>
+    <li>Your account information — name, department, station, apparatus</li>
+    <li>Your authentication credentials (passwords are never stored in plain text)</li>
+    <li>Your crew membership and crew data</li>
+    <li>Your call logs and shift reports</li>
+    <li>Your readiness scores and historical data</li>
+    <li>Your earned badges and achievements</li>
+    <li>Your push notification token</li>
+    <li>Your notification history log</li>
+  </ul>
+  <p>This data persists in our cloud database until you delete your account or submit a deletion request.</p>
+ 
+  <hr />
+ 
+  <h2>3. How to Delete Your Data</h2>
+ 
+  <h3>3.1 Delete Your Account In-App (Recommended)</h3>
+  <p>You can delete your account and all associated data directly within FireWatch:</p>
+ 
+  <div class="steps-box">
+    <p>Steps to delete your account:</p>
+    <ul>
+      <li>Open FireWatch and go to the <strong>Profile tab</strong></li>
+      <li>Scroll to the bottom and tap <strong>"Delete Account"</strong></li>
+      <li>Read the confirmation warning — this action is permanent and cannot be undone</li>
+      <li>Tap <strong>"Confirm Delete"</strong> to proceed</li>
+    </ul>
+  </div>
+ 
+  <p>When you delete your account in-app, the following happens immediately:</p>
+  <ul>
+    <li>All your data is permanently deleted from our database — profile, calls, scores, badges, crew membership, push tokens, and notification logs</li>
+    <li>Your authentication account is deleted</li>
+    <li>All local data stored on your device is cleared</li>
+    <li>You are signed out and returned to the welcome screen</li>
+  </ul>
+ 
+  <h3>3.2 Request Deletion by Email</h3>
+  <p>If you are unable to access the app or prefer to submit a deletion request by email, contact us at:</p>
+  <p><a href="mailto:firewatchtravis@gmail.com"><strong>firewatchtravis@gmail.com</strong></a></p>
+  <p>Please include the following in your email:</p>
+  <ul>
+    <li>Your full name</li>
+    <li>The email address associated with your FireWatch account</li>
+    <li>A clear statement that you are requesting deletion of your account and all associated data</li>
+  </ul>
+  <p>We will process your request and confirm deletion within <strong>30 days</strong> of receiving your email.</p>
+ 
+  <hr />
+ 
+  <h2>4. What Happens After Deletion</h2>
+  <p>Once your account is deleted:</p>
+  <ul>
+    <li>All personal data is permanently removed from our servers within 30 days</li>
+    <li>Your data <strong>cannot be recovered</strong> after deletion — this action is irreversible</li>
+    <li>Any crew you created will be dissolved and crew members will be removed</li>
+    <li>If you were a member of a crew, you will be removed from the crew member list</li>
+    <li>Your badges, scores, and call history cannot be transferred or exported before deletion</li>
+  </ul>
+  <div class="info-box">
+    <p>Note: Anonymized, aggregated statistical data that cannot be linked back to you may be retained for app improvement purposes.</p>
+  </div>
+ 
+  <hr />
+ 
+  <h2>5. Data We Do Not Delete</h2>
+  <p>The following are not deleted as part of your account deletion request:</p>
+  <ul>
+    <li><strong>Health data in Apple Health or Google Health Connect</strong> — FireWatch only reads this data and does not control it. To remove health data from Apple Health or Health Connect, do so directly in those apps on your device</li>
+    <li><strong>Device backups</strong> — Backup copies held by Apple or Google as part of your device backup are outside our control</li>
+    <li><strong>Legal records</strong> — Records we are required to retain by applicable law</li>
+  </ul>
+ 
+  <hr />
+ 
+  <h2>6. Data Portability</h2>
+  <p>FireWatch does not currently offer a data export feature. If you would like a copy of your data before deleting your account, please contact us at <a href="mailto:firewatchtravis@gmail.com">firewatchtravis@gmail.com</a> and we will provide what we are able to within 30 days.</p>
+ 
+  <hr />
+ 
+  <h2>7. Health Data — Special Note</h2>
+  <p>FireWatch reads health data from Apple Health (iOS) or Google Health Connect (Android) but does not permanently store raw health data on our servers. Health data is processed on your device to calculate readiness scores — the scores are stored, not the raw health readings.</p>
+  <p>To revoke FireWatch's access to your health data without deleting your account:</p>
+ 
+  <div class="platform-note">
+    <p>📱 On iOS:</p>
+    <ul>
+      <li>Go to Settings → Privacy &amp; Security → Health → FireWatch</li>
+      <li>Turn off all permissions</li>
+    </ul>
+  </div>
+ 
+  <div class="platform-note">
+    <p>🤖 On Android:</p>
+    <ul>
+      <li>Go to Settings → Health Connect → App permissions → FireWatch</li>
+      <li>Turn off all permissions</li>
+    </ul>
+  </div>
+ 
+  <hr />
+ 
+  <h2>8. Children's Data</h2>
+  <p>FireWatch is not intended for users under 18 years of age. If you believe a child under 18 has created an account, please contact us at <a href="mailto:firewatchtravis@gmail.com">firewatchtravis@gmail.com</a> and we will delete the account immediately.</p>
+ 
+  <hr />
+ 
+  <h2>9. Contact</h2>
+  <p>For any questions about your data, deletion requests, or privacy concerns:</p>
+  <div class="contact-block">
+    <p><strong>Travis Brault</strong><br />
+    Developer, FireWatch<br />
+    <a href="mailto:firewatchtravis@gmail.com">firewatchtravis@gmail.com</a></p>
+  </div>
+ 
+</div>
+ 
+<div class="footer">
+  &copy; 2026 Travis Brault. All rights reserved.
+</div>
+ 
+</body>
+</html>
