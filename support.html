@@ -24,10 +24,9 @@
       padding: 16px 32px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       z-index: 100;
     }
-    .nav-logo { font-size: 1.1rem; font-weight: 800; letter-spacing: 3px; color: #F59260; text-transform: uppercase; }
     .nav-links { display: flex; gap: 24px; }
     .nav-links a { color: #aaa; text-decoration: none; font-size: 14px; }
     .nav-links a:hover { color: #fff; }
@@ -39,33 +38,41 @@
       background: radial-gradient(ellipse at top, #1a1d26 0%, #0f1117 70%);
       border-bottom: 1px solid #1e2130;
     }
-    .hero-badge {
-      display: inline-block;
-      background: rgba(245,146,96,0.15);
-      color: #F59260;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 6px 16px;
-      border-radius: 20px;
-      border: 1px solid rgba(245,146,96,0.3);
-      margin-bottom: 24px;
-    }
     .hero h1 {
       font-size: clamp(2.5rem, 6vw, 4rem);
       font-weight: 900;
       letter-spacing: 6px;
       text-transform: uppercase;
       color: #fff;
-      margin-bottom: 16px;
+      margin-bottom: 28px;
     }
     .hero h1 span { color: #F59260; }
-    .hero p {
-      font-size: 1.2rem;
-      color: #888;
-      max-width: 560px;
+    .hero-bullets {
+      list-style: none;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
       margin: 0 auto 40px;
+      max-width: 480px;
+    }
+    .hero-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 1.05rem;
+      color: #888;
+      text-align: left;
+    }
+    .hero-bullets li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #F59260;
+      margin-top: 9px;
+      flex-shrink: 0;
     }
     .hero-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
     .btn-primary {
@@ -139,7 +146,6 @@
     .support-section { background: #0c0e14; padding: 80px 24px; border-top: 1px solid #1e2130; border-bottom: 1px solid #1e2130; }
     .support-inner { max-width: 760px; margin: 0 auto; }
  
-    /* FAQ GROUP HEADERS */
     .faq-group-label {
       font-size: 11px;
       font-weight: 700;
@@ -152,10 +158,7 @@
     }
     .faq-group-label:first-of-type { margin-top: 0; }
  
-    /* COLLAPSIBLE FAQ ITEMS */
-    .faq-item {
-      border-bottom: 1px solid #1e2130;
-    }
+    .faq-item { border-bottom: 1px solid #1e2130; }
     .faq-item:last-child { border-bottom: none; }
  
     .faq-toggle {
@@ -170,13 +173,7 @@
       gap: 16px;
       text-align: left;
     }
-    .faq-toggle h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #fff;
-      transition: color 0.2s;
-      flex: 1;
-    }
+    .faq-toggle h3 { font-size: 1rem; font-weight: 600; color: #fff; transition: color 0.2s; flex: 1; }
     .faq-toggle:hover h3 { color: #F59260; }
  
     .faq-chevron {
@@ -193,32 +190,16 @@
       color: #F59260;
       font-size: 11px;
     }
-    .faq-item.open .faq-chevron {
-      transform: rotate(180deg);
-      background: rgba(245,146,96,0.2);
-    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); background: rgba(245,146,96,0.2); }
  
-    .faq-body {
-      overflow: hidden;
-      max-height: 0;
-      transition: max-height 0.3s ease, padding 0.3s ease;
-    }
-    .faq-item.open .faq-body {
-      max-height: 600px;
-    }
-    .faq-body-inner {
-      padding-bottom: 22px;
-    }
-    .faq-body p {
-      font-size: 14px;
-      color: #888;
-      margin: 0;
-      line-height: 1.7;
-    }
+    .faq-body { overflow: hidden; max-height: 0; transition: max-height 0.3s ease; }
+    .faq-item.open .faq-body { max-height: 600px; }
+    .faq-body-inner { padding-bottom: 22px; }
+    .faq-body p { font-size: 14px; color: #888; margin: 0; line-height: 1.7; }
     .faq-body a { color: #F59260; text-decoration: none; }
     .faq-body a:hover { text-decoration: underline; }
  
-    /* LEGAL LINKS */
+    /* LEGAL */
     .legal-section { padding: 60px 24px; }
     .legal-inner { max-width: 760px; margin: 0 auto; }
     .legal-grid {
@@ -280,7 +261,6 @@
  
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">🔥 FireWatch</div>
   <div class="nav-links">
     <a href="#features">Features</a>
     <a href="#faq">Support</a>
@@ -291,9 +271,12 @@
  
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-badge">Built for Firefighters</div>
   <h1>Fire<span>Watch</span></h1>
-  <p>Operational readiness tracking that combines your wearable data with call history to detect burnout before it impacts performance.</p>
+  <ul class="hero-bullets">
+    <li>Tracks operational readiness and burnout scores</li>
+    <li>Keeps a detailed call history log</li>
+    <li>Gives individually tailored recovery game plans</li>
+  </ul>
   <div class="hero-buttons">
     <a href="#faq" class="btn-primary">Get Support</a>
     <a href="#contact" class="btn-secondary">Contact Us</a>
@@ -320,7 +303,7 @@
       <div class="feature-card">
         <div class="feature-icon">👥</div>
         <h3>Crew Board</h3>
-        <p>See how your crew is recovering. Compare readiness scores, call counts, and earned badges.</p>
+        <p>See how your crew is recovering. Compare readiness scores, call counts, and earned badges — and compete against your crew in challenges.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🏅</div>
@@ -348,7 +331,6 @@
     <h2 style="font-size:1.8rem;font-weight:800;color:#fff;margin-bottom:8px;">Frequently Asked Questions</h2>
     <p style="color:#888;margin-bottom:40px;">Can't find what you're looking for? <a href="mailto:firewatchtravis@gmail.com" style="color:#F59260;">Email us</a>.</p>
  
-    <!-- GROUP: Readiness & Game Plan -->
     <div class="faq-group-label">Readiness & Game Plan</div>
  
     <div class="faq-item">
@@ -356,11 +338,9 @@
         <h3>What's the difference between Operational Readiness and my Game Plan?</h3>
         <span class="faq-chevron">▼</span>
       </button>
-      <div class="faq-body">
-        <div class="faq-body-inner">
-          <p>Operational Readiness answers "how ready am I right now?" — it's a snapshot based on sleep, HRV, and recent shift load. Your Game Plan answers "what should I do today?" — it's based on how much cumulative stress your system has absorbed. Think of readiness as your current fuel level, and the Game Plan as the maintenance schedule.</p>
-        </div>
-      </div>
+      <div class="faq-body"><div class="faq-body-inner">
+        <p>Operational Readiness answers "how ready am I right now?" — it's a snapshot based on sleep, HRV, and recent shift load. Your Game Plan answers "what should I do today?" — it's based on how much cumulative stress your system has absorbed. Think of readiness as your current fuel level, and the Game Plan as the maintenance schedule.</p>
+      </div></div>
     </div>
  
     <div class="faq-item">
@@ -368,11 +348,9 @@
         <h3>Why does my Game Plan say "Take It Easy" when my readiness score looks fine?</h3>
         <span class="faq-chevron">▼</span>
       </button>
-      <div class="faq-body">
-        <div class="faq-body-inner">
-          <p>Your Game Plan and your Operational Readiness score measure different things. Readiness reflects how you feel right now — based on last night's sleep and this morning's HRV. Your Game Plan looks at how hard your body has been working over the past week, using your shift strain and burnout trend. A week of heavy calls can push your Game Plan into recovery mode even on a day when your sleep and HRV are solid.</p>
-        </div>
-      </div>
+      <div class="faq-body"><div class="faq-body-inner">
+        <p>Your Game Plan and your Operational Readiness score measure different things. Readiness reflects how you feel right now — based on last night's sleep and this morning's HRV. Your Game Plan looks at how hard your body has been working over the past week, using your shift strain and burnout trend. A week of heavy calls can push your Game Plan into recovery mode even on a day when your sleep and HRV are solid.</p>
+      </div></div>
     </div>
  
     <div class="faq-item">
@@ -380,11 +358,9 @@
         <h3>Can my readiness score be high and my Game Plan still say to recover?</h3>
         <span class="faq-chevron">▼</span>
       </button>
-      <div class="faq-body">
-        <div class="faq-body-inner">
-          <p>Yes, and it's actually common. A good night's sleep can lift your readiness score, but it doesn't erase a week of back-to-back busy shifts. FireWatch tracks both signals separately so one doesn't mask the other.</p>
-        </div>
-      </div>
+      <div class="faq-body"><div class="faq-body-inner">
+        <p>Yes, and it's actually common. A good night's sleep can lift your readiness score, but it doesn't erase a week of back-to-back busy shifts. FireWatch tracks both signals separately so one doesn't mask the other.</p>
+      </div></div>
     </div>
  
     <div class="faq-item">
@@ -392,11 +368,9 @@
         <h3>What actually drives my Game Plan?</h3>
         <span class="faq-chevron">▼</span>
       </button>
-      <div class="faq-body">
-        <div class="faq-body-inner">
-          <p>Three things: your shift strain score from recent calls, your 7-day burnout trend, and your 30-day burnout trend. If any one of those climbs high enough, your Game Plan shifts accordingly — regardless of how your readiness number looks that day.</p>
-        </div>
-      </div>
+      <div class="faq-body"><div class="faq-body-inner">
+        <p>Three things: your shift strain score from recent calls, your 7-day burnout trend, and your 30-day burnout trend. If any one of those climbs high enough, your Game Plan shifts accordingly — regardless of how your readiness number looks that day.</p>
+      </div></div>
     </div>
  
     <div class="faq-item">
@@ -404,14 +378,11 @@
         <h3>When does my Game Plan go into "Recovery Priority"?</h3>
         <span class="faq-chevron">▼</span>
       </button>
-      <div class="faq-body">
-        <div class="faq-body-inner">
-          <p>When your system is significantly depleted — either a single shift with extreme strain, or a sustained stretch of heavy weeks that's pushed your burnout trend high. At that point FireWatch prioritizes recovery above everything else, regardless of how today's metrics look individually.</p>
-        </div>
-      </div>
+      <div class="faq-body"><div class="faq-body-inner">
+        <p>When your system is significantly depleted — either a single shift with extreme strain, or a sustained stretch of heavy weeks that's pushed your burnout trend high. At that point FireWatch prioritizes recovery above everything else, regardless of how today's metrics look individually.</p>
+      </div></div>
     </div>
  
-    <!-- GROUP: Devices & Data -->
     <div class="faq-group-label">Devices & Data</div>
  
     <div class="faq-item">
@@ -419,11 +390,9 @@
         <h3>How do I connect my wearable device?</h3>
         <span class="faq-chevron">▼</span>
       </button>
-      <div class="faq-body">
-        <div class="faq-body-inner">
-          <p>FireWatch reads data from Apple Health (iOS) or Google Health Connect (Android). Open the app, go to the Connect Device screen, and tap "Connect Apple Health" or "Connect Health Connect." Your wearable must already be syncing to one of these platforms.</p>
-        </div>
-      </div>
+      <div class="faq-body"><div class="faq-body-inner">
+        <p>FireWatch reads data from Apple Health (iOS) or Google Health Connect (Android). Open the app, go to the Connect Device screen, and tap "Connect Apple Health" or "Connect Health Connect." Your wearable must already be syncing to one of these platforms.</p>
+      </div></div>
     </div>
  
     <div class="faq-item">
@@ -431,11 +400,9 @@
         <h3>What wearables are supported?</h3>
         <span class="faq-chevron">▼</span>
       </button>
-      <div class="faq-body">
-        <div class="faq-body-inner">
-          <p>Any wearable that syncs to Apple Health (iOS) or Google Health Connect (Android) is supported. This includes Apple Watch, Garmin, Fitbit, Oura Ring, Polar, Whoop, and most other major fitness wearables. Note that some devices may not share all data types — see our connect screen for compatibility details.</p>
-        </div>
-      </div>
+      <div class="faq-body"><div class="faq-body-inner">
+        <p>Any wearable that syncs to Apple Health (iOS) or Google Health Connect (Android) is supported. This includes Apple Watch, Garmin, Fitbit, Oura Ring, Polar, Whoop, and most other major fitness wearables. Note that some devices may not share all data types — see our connect screen for compatibility details.</p>
+      </div></div>
     </div>
  
     <div class="faq-item">
@@ -443,11 +410,9 @@
         <h3>My Garmin watch isn't showing HRV data — why?</h3>
         <span class="faq-chevron">▼</span>
       </button>
-      <div class="faq-body">
-        <div class="faq-body-inner">
-          <p>Garmin does not natively sync HRV data to Apple Health or Google Health Connect. To get full HRV-based readiness scoring, download the free app <strong>Health Sync</strong> from the App Store or Play Store, which bridges your Garmin HRV data into Apple Health or Health Connect.</p>
-        </div>
-      </div>
+      <div class="faq-body"><div class="faq-body-inner">
+        <p>Garmin does not natively sync HRV data to Apple Health or Google Health Connect. To get full HRV-based readiness scoring, download the free app <strong>Health Sync</strong> from the App Store or Play Store, which bridges your Garmin HRV data into Apple Health or Health Connect.</p>
+      </div></div>
     </div>
  
     <div class="faq-item">
@@ -455,14 +420,11 @@
         <h3>Is my health data shared with anyone?</h3>
         <span class="faq-chevron">▼</span>
       </button>
-      <div class="faq-body">
-        <div class="faq-body-inner">
-          <p>No. Your health data is never sold or shared with third parties. It is used only to calculate your readiness scores within the app. See our <a href="privacy-policy.html">Privacy Policy</a> for full details.</p>
-        </div>
-      </div>
+      <div class="faq-body"><div class="faq-body-inner">
+        <p>No. Your health data is never sold or shared with third parties. It is used only to calculate your readiness scores within the app. See our <a href="privacy-policy.html">Privacy Policy</a> for full details.</p>
+      </div></div>
     </div>
  
-    <!-- GROUP: Account & Crew -->
     <div class="faq-group-label">Account & Crew</div>
  
     <div class="faq-item">
@@ -470,11 +432,9 @@
         <h3>How do I create or join a crew?</h3>
         <span class="faq-chevron">▼</span>
       </button>
-      <div class="faq-body">
-        <div class="faq-body-inner">
-          <p>Go to the Crew tab in the app. Tap "Create Crew" to start a new crew and get a shareable join code. Share that code with your crew members so they can join by tapping "Join Crew" and entering the code.</p>
-        </div>
-      </div>
+      <div class="faq-body"><div class="faq-body-inner">
+        <p>Go to the Crew tab in the app. Tap "Create Crew" to start a new crew and get a shareable join code. Share that code with your crew members so they can join by tapping "Join Crew" and entering the code.</p>
+      </div></div>
     </div>
  
     <div class="faq-item">
@@ -482,11 +442,9 @@
         <h3>How do I cancel my subscription?</h3>
         <span class="faq-chevron">▼</span>
       </button>
-      <div class="faq-body">
-        <div class="faq-body-inner">
-          <p>Subscriptions are managed through the Apple App Store or Google Play Store. To cancel, go to your device's subscription settings and cancel FireWatch. You will retain access to premium features until the end of your current billing period.</p>
-        </div>
-      </div>
+      <div class="faq-body"><div class="faq-body-inner">
+        <p>Subscriptions are managed through the Apple App Store or Google Play Store. To cancel, go to your device's subscription settings and cancel FireWatch. You will retain access to premium features until the end of your current billing period.</p>
+      </div></div>
     </div>
  
     <div class="faq-item">
@@ -494,14 +452,11 @@
         <h3>How do I delete my account and data?</h3>
         <span class="faq-chevron">▼</span>
       </button>
-      <div class="faq-body">
-        <div class="faq-body-inner">
-          <p>Go to the Profile tab → scroll to the bottom → tap "Delete Account." This permanently deletes all your data from our servers and your device. This action cannot be undone. You can also request deletion by emailing <a href="mailto:firewatchtravis@gmail.com">firewatchtravis@gmail.com</a>.</p>
-        </div>
-      </div>
+      <div class="faq-body"><div class="faq-body-inner">
+        <p>Go to the Profile tab → scroll to the bottom → tap "Delete Account." This permanently deletes all your data from our servers and your device. This action cannot be undone. You can also request deletion by emailing <a href="mailto:firewatchtravis@gmail.com">firewatchtravis@gmail.com</a>.</p>
+      </div></div>
     </div>
  
-    <!-- GROUP: General -->
     <div class="faq-group-label">General</div>
  
     <div class="faq-item">
@@ -509,11 +464,9 @@
         <h3>Is FireWatch a medical device?</h3>
         <span class="faq-chevron">▼</span>
       </button>
-      <div class="faq-body">
-        <div class="faq-body-inner">
-          <p>No. FireWatch is a personal wellness and operational readiness tool. It is not a medical device and should never be used to make fitness-for-duty decisions. Always follow your department's policies for duty-related decisions.</p>
-        </div>
-      </div>
+      <div class="faq-body"><div class="faq-body-inner">
+        <p>No. FireWatch is a personal wellness and operational readiness tool. It is not a medical device and should never be used to make fitness-for-duty decisions. Always follow your department's policies for duty-related decisions.</p>
+      </div></div>
     </div>
  
     <div class="faq-item">
@@ -521,11 +474,9 @@
         <h3>I found a bug or have a feature request</h3>
         <span class="faq-chevron">▼</span>
       </button>
-      <div class="faq-body">
-        <div class="faq-body-inner">
-          <p>Please email us at <a href="mailto:firewatchtravis@gmail.com">firewatchtravis@gmail.com</a> with details. We read every message and appreciate your feedback.</p>
-        </div>
-      </div>
+      <div class="faq-body"><div class="faq-body-inner">
+        <p>Please email us at <a href="mailto:firewatchtravis@gmail.com">firewatchtravis@gmail.com</a> with details. We read every message and appreciate your feedback.</p>
+      </div></div>
     </div>
  
   </div>
@@ -582,12 +533,10 @@
     btn.addEventListener('click', () => {
       const item = btn.closest('.faq-item');
       const isOpen = item.classList.contains('open');
-      // Close all
       document.querySelectorAll('.faq-item.open').forEach(el => {
         el.classList.remove('open');
         el.querySelector('.faq-toggle').setAttribute('aria-expanded', 'false');
       });
-      // Open clicked if it was closed
       if (!isOpen) {
         item.classList.add('open');
         btn.setAttribute('aria-expanded', 'true');
